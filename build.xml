@@ -1,0 +1,70 @@
+<project name="Deployment manager" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
+
+    <property environment="env"/>
+    <property name="dev.username"          value="support+gf@impactbox.co.uk.developib"/>
+    <property name="dev.password"          value="4u6wHcXx385jm2n2HxgzKjQU1zpfNoudO207"/>
+    <property name="prod.username"          value="support+gf@impactbox.co.uk"/>
+    <property name="prod.password"          value="4u6wHcXx385jVkkic725K9DXWWfxJQJhmO9b"/>
+    <property name="sf.serverurl"           value="https://login.salesforce.com"/>
+    <property name="sand.serverurl"           value="https://test.salesforce.com"/>
+    <property name="sf.maxPoll"             value="200"/>
+    <property name="sf.recentValidationId"  value="0Af4J00000mLIbKSAW"/> 
+    <property environment="env"/>
+
+    <taskdef resource="com/salesforce/antlib.xml" uri="antlib:com.salesforce">
+        <classpath>
+            <pathelement location="lib/ant-salesforce.jar" />
+        </classpath>
+    </taskdef>
+    
+    <target name="retrieve">
+
+      <delete dir="src"/>
+      <mkdir dir="src"/>
+
+      <sf:retrieve username="${dev.username}" password="${dev.password}" serverurl="${sand.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="/src" unpackaged="lib/package.xml"/>
+
+    </target>
+
+    <target name="validate">
+     <sf:deploy username="${prod.username}" password="${prod.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="/src" rollbackOnError="true" checkOnly="true" pollWaitMillis="10000" testLevel="RunSpecifiedTests">        
+     <runTest>UTIL_HTMLOutput_TEST</runTest>
+     </sf:deploy>
+   </target>
+
+    <target name="deploy">
+     <sf:deploy username="${prod.username}" password="${prod.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="/src" rollbackOnError="true" checkOnly="false" pollWaitMillis="10000" testLevel="RunSpecifiedTests">        
+     <runTest>UTIL_HTMLOutput_TEST</runTest>
+     </sf:deploy>
+   </target>
+
+   <target name="validateSandbox">
+     <sf:deploy username="${dev.username}" password="${dev.password}" serverurl="${sand.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="/src" rollbackOnError="true" checkOnly="false" pollWaitMillis="10000" testLevel="RunSpecifiedTests">        
+     <runTest>IB_RegisterServerControllerTest</runTest>
+     </sf:deploy>
+   </target>
+
+  <target name="quickDeploy">
+	   <sf:deployRecentValidation username="${prod.username}" password="${prod.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" recentValidationId="${sf.recentValidationId}"/>
+    </target>
+
+<target name="quickDeploySandbox">
+     <sf:deployRecentValidation username="${dev.username}" password="${dev.password}" serverurl="${sand.serverurl}" maxPoll="${sf.maxPoll}" recentValidationId="${sf.recentValidationId}"/>
+    </target>
+
+  <target name="quickDeployTesting">
+     <sf:deployRecentValidation username="${testing.username}" password="${testing.password}" serverurl="${sand.serverurl}" maxPoll="${sf.maxPoll}" recentValidationId="${sf.recentValidationId}"/>
+    </target>
+
+  <target name="deployTesting">
+     <sf:deploy username="${testing.username}" password="${testing.password}" serverurl="${sand.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="/src" rollbackOnError="true" checkOnly="false" testLevel="NoTestRun"/>
+    </target>
+
+    <target name="deploySandbox">
+     <sf:deploy username="${dev.username}" password="${dev.password}" serverurl="${sand.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="/src" rollbackOnError="true" checkOnly="false" testLevel="NoTestRun"/>
+    </target>
+
+   <target name="test">
+   </target>
+
+</project>
