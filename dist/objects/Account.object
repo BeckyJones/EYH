@@ -229,6 +229,14 @@
     </actionOverrides>
     <compactLayoutAssignment>NPSP_Organization_Account</compactLayoutAssignment>
     <compactLayouts>
+        <fullName>EYH_Organisations</fullName>
+        <fields>RecordTypeId</fields>
+        <fields>npe01__One2OneContact__c</fields>
+        <fields>Phone</fields>
+        <fields>Website</fields>
+        <label>EYH Organisations</label>
+    </compactLayouts>
+    <compactLayouts>
         <fullName>NPSP_Household_Account</fullName>
         <fields>Name</fields>
         <fields>npe01__One2OneContact__c</fields>
@@ -2373,6 +2381,7 @@ IF(NOT(ISNULL($Setup.npo02__Households_Settings__c.npo02__Membership_Grace_Perio
     <recordTypes>
         <fullName>EYHMemberCharity</fullName>
         <active>true</active>
+        <compactLayoutAssignment>EYH_Organisations</compactLayoutAssignment>
         <label>EYH Member Charity</label>
         <picklistValues>
             <picklist>AccountSource</picklist>
@@ -2952,7 +2961,7 @@ IF(NOT(ISNULL($Setup.npo02__Households_Settings__c.npo02__Membership_Grace_Perio
     <recordTypes>
         <fullName>Organization</fullName>
         <active>true</active>
-        <compactLayoutAssignment>NPSP_Organization_Account</compactLayoutAssignment>
+        <compactLayoutAssignment>EYH_Organisations</compactLayoutAssignment>
         <description>An Account representing an organization</description>
         <label>Organization</label>
         <picklistValues>
