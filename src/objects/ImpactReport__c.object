@@ -152,7 +152,45 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>Private</externalSharingModel>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Bursary_funding_distributed__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Bursary funding distributed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Children_supported_into_own_home__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Children supported into own home</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claims_against_bondscash_deposits__c</fullName>
+        <description>No. of claims made against bonds and/or cash deposits
+
+created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <inlineHelpText>No. of claims made against bonds and/or cash deposits</inlineHelpText>
+        <label>Claims against bonds/cash deposits</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
     <fields>
         <fullName>Date_Received__c</fullName>
         <description>created by Desa Markovic @Impact Box on 27/10/21</description>
@@ -172,17 +210,30 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Females_housed__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Females housed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Grant__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
         <description>created by Desa Markovic @Impact Box on 26/10/21</description>
         <externalId>false</externalId>
         <label>Grant</label>
         <referenceTo>Grant__c</referenceTo>
         <relationshipLabel>Impact Reports</relationshipLabel>
         <relationshipName>Impact_Reports</relationshipName>
-        <required>false</required>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
         <trackTrending>false</trackTrending>
-        <type>Lookup</type>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
         <fullName>Hours_of_Support_Delivered__c</fullName>
@@ -204,6 +255,7 @@
         <formula>CASE( RecordType.DeveloperName , 
 &apos;HealthFundImpactReport&apos;, HYPERLINK(&apos;https://www.tfaforms.com/4943566/?&apos; +  &apos;tfa_32=&apos; +  Id , &apos;Click Here&apos;),
 &apos;EmployabilityFundImpactReport&apos;, HYPERLINK(&apos;https://www.tfaforms.com/4944120/?&apos; +  &apos;tfa_58=&apos; +  Id , &apos;Click Here&apos;),
+&apos;FutureBuildersImpactReport&apos;, HYPERLINK(&apos;https://www.tfaforms.com/4946067/?&apos; +  &apos;tfa_29=&apos; +  Id , &apos;Click Here&apos;),
 &apos;&apos;)</formula>
         <inlineHelpText>Send this link to organisations to submit their impact reporting</inlineHelpText>
         <label>Impact Reporting Form</label>
@@ -217,11 +269,23 @@
         <description>created by Desa Markovic @Impact Box on 27/10/21</description>
         <externalId>false</externalId>
         <label>% Improved Self Esteem</label>
-        <precision>18</precision>
+        <precision>17</precision>
         <required>false</required>
         <scale>0</scale>
         <trackTrending>false</trackTrending>
         <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Males_housed__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Males housed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>More_Positive_About_Future__c</fullName>
@@ -230,9 +294,68 @@
         <label>% More Positive About Future</label>
         <precision>18</precision>
         <required>false</required>
-        <scale>0</scale>
+        <scale>1</scale>
         <trackTrending>false</trackTrending>
         <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Movein_Grants_provided_to_YPs__c</fullName>
+        <description>No. of move-in grants provided to young people
+
+created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Move-in Grants provided to YPs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>New_landlords_engaged__c</fullName>
+        <description>No. of new landlords engaged 
+
+created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <inlineHelpText>No. of new landlords engaged</inlineHelpText>
+        <label>New landlords engaged</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Positive_moveons_from_Housing_Fund__c</fullName>
+        <description>No. of positive move-ons from Housing Fund support
+
+created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <inlineHelpText>No. of positive move-ons from Housing Fund support</inlineHelpText>
+        <label>Positive move-ons from Housing Fund</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Private_Tenancies__c</fullName>
+        <description>No. of private tenancies
+
+created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <inlineHelpText>No. of private tenancies</inlineHelpText>
+        <label>Private Tenancies</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Qualifications_Achieved__c</fullName>
@@ -258,10 +381,81 @@
         <visibleLines>5</visibleLines>
     </fields>
     <fields>
+        <fullName>ReportingPeriodEnd__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Reporting Period End</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ReportingPeriodStart__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Reporting Period Start</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>SessionsDelivered__c</fullName>
         <description>created by Desa Markovic @Impact Box</description>
         <externalId>false</externalId>
         <label>Sessions Delivered</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Social_Tenancies__c</fullName>
+        <description>No. of social tenancies (where there is a financial obstacle)
+
+created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <inlineHelpText>No. of social tenancies (where there is a financial obstacle)</inlineHelpText>
+        <label>Social Tenancies</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tenancy_breakdowns__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Tenancy breakdowns</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Tenancies__c</fullName>
+        <description>Total no. of tenancies supported (private and social)
+
+created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Total Tenancies</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_YP_Engaged__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Total YP Engaged</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -387,6 +581,134 @@ created by Desa Markovic @Impact Box</description>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>YP_supported_into_own_home__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>YP supported into own home</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>YPs_Housed_in_a_Future_Builders_Property__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>YPs Housed in a Future Builders Property</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>YPs_maintaining_3_month_tenancy__c</fullName>
+        <description>No. of young people who have been set-up on a savings plan
+
+created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <inlineHelpText>No. of young people who have been set-up on a savings plan</inlineHelpText>
+        <label>YPs maintaining 3 month tenancy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>YPs_maintaining_6_month_tenancy__c</fullName>
+        <description>No. of young people who have been set-up on a savings plan
+
+created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <inlineHelpText>No. of young people who have been set-up on a savings plan</inlineHelpText>
+        <label>YPs maintaining 6 month tenancy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>YPs_moved_on_with_full_deposit_saved__c</fullName>
+        <description>No. of young people who have moved on with full deposit saved
+
+created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <inlineHelpText>No. of young people who have moved on with full deposit saved</inlineHelpText>
+        <label>YPs moved on with full deposit saved</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>YPs_moved_on_with_no_saved_deposit__c</fullName>
+        <description>No. of young people who have moved on with no deposit saved
+
+created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <inlineHelpText>No. of young people who have moved on with no deposit saved</inlineHelpText>
+        <label>YPs moved on with no saved deposit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>YPs_moved_on_with_some_deposit_saved__c</fullName>
+        <description>No. of young people who have moved on with no deposit saved
+
+created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <inlineHelpText>No. of young people who have moved on with no deposit saved</inlineHelpText>
+        <label>YPs moved on with some deposit saved</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>YPs_on_savings_plan__c</fullName>
+        <description>No. of young people who have been set-up on a savings plan
+
+created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>YPs on savings plan</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>YPs_referred_or_accessing_support__c</fullName>
+        <description>No. of young people referred to the scheme/ accessing pre-tenancy support.
+
+created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <inlineHelpText>No. of young people referred to the scheme/ accessing pre-tenancy support.</inlineHelpText>
+        <label>YPs referred or accessing support</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Young_People_Supported__c</fullName>
         <description>created by Desa Markovic @Impact Box on 26/20/21</description>
         <externalId>false</externalId>
@@ -415,12 +737,22 @@ created by Desa Markovic @Impact Box</description>
         <label>Employability Fund Impact Report</label>
     </recordTypes>
     <recordTypes>
+        <fullName>FutureBuildersImpactReport</fullName>
+        <active>true</active>
+        <label>Future Builders Impact Report</label>
+    </recordTypes>
+    <recordTypes>
         <fullName>HealthFundImpactReport</fullName>
         <active>true</active>
         <label>Health Fund Impact Report</label>
     </recordTypes>
+    <recordTypes>
+        <fullName>HousingFundImpactReport</fullName>
+        <active>true</active>
+        <label>Housing Fund Impact Report</label>
+    </recordTypes>
     <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>ControlledByParent</sharingModel>
     <startsWith>Vowel</startsWith>
     <visibility>Public</visibility>
 </CustomObject>

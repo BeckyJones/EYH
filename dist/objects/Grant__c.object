@@ -240,9 +240,182 @@
         <trackTrending>false</trackTrending>
         <type>Date</type>
     </fields>
+    <fields>
+        <fullName>Target_Bursary_funding_distributed__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Target: Bursary funding distributed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Target_YPs_entering_EET__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Target: YPs entering EET</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Target_YPs_supported_in_programme__c</fullName>
+        <externalId>false</externalId>
+        <label>Target: YPs supported in programme</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Target_YPs_supported_into_own_home__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Target: YPs supported into own home</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Bursary_funding_distributed__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Total Bursary funding distributed</label>
+        <summarizedField>ImpactReport__c.Bursary_funding_distributed__c</summarizedField>
+        <summaryForeignKey>ImpactReport__c.Grant__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Hours_Support_Delivered__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Total Hours Support Delivered</label>
+        <summarizedField>ImpactReport__c.Hours_of_Support_Delivered__c</summarizedField>
+        <summaryForeignKey>ImpactReport__c.Grant__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_YPs_Entering_EET__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Total YPs Entering EET</label>
+        <summarizedField>ImpactReport__c.YP_Entering_EET__c</summarizedField>
+        <summaryForeignKey>ImpactReport__c.Grant__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_YPs_Supported_in_Programme__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Total YPs Supported in Programme</label>
+        <summarizedField>ImpactReport__c.Young_People_Supported__c</summarizedField>
+        <summaryForeignKey>ImpactReport__c.Grant__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_YPs_housed_in_FB_Property__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Total YPs housed in FB Property</label>
+        <summarizedField>ImpactReport__c.YPs_Housed_in_a_Future_Builders_Property__c</summarizedField>
+        <summaryForeignKey>ImpactReport__c.Grant__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_YPs_supported_into_own_home__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Total YPs supported into own home</label>
+        <summarizedField>ImpactReport__c.YP_supported_into_own_home__c</summarizedField>
+        <summaryForeignKey>ImpactReport__c.Grant__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_children_supported_into_own_home__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Total children supported into own home</label>
+        <summarizedField>ImpactReport__c.Children_supported_into_own_home__c</summarizedField>
+        <summaryForeignKey>ImpactReport__c.Grant__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_females_housed__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Total females housed</label>
+        <summarizedField>ImpactReport__c.Females_housed__c</summarizedField>
+        <summaryForeignKey>ImpactReport__c.Grant__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_males_housed__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Total males housed</label>
+        <summarizedField>ImpactReport__c.Males_housed__c</summarizedField>
+        <summaryForeignKey>ImpactReport__c.Grant__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_tenancy_breakdowns__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Total tenancy breakdowns</label>
+        <summarizedField>ImpactReport__c.Tenancy_breakdowns__c</summarizedField>
+        <summaryForeignKey>ImpactReport__c.Grant__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
     <label>Grant</label>
     <listViews>
         <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Target_YPs_supported_in_programme__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
