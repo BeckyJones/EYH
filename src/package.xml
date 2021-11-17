@@ -8,7 +8,12 @@
     </types>
     <types>
         <members>Set_Grant_Name</members>
+        <members>Set_Recipient_Email_on_Impact_Report</members>
         <name>Flow</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Profile</name>
     </types>
     <types>
         <members>Impact</members>

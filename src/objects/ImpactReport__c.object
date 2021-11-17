@@ -154,13 +154,37 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
+        <fullName>Average_Bursary_Grant__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Average bursary amount given</inlineHelpText>
+        <label>Average Bursary Grant</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Bursaries_Granted__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Bursaries Granted</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Bursary_funding_distributed__c</fullName>
         <description>created by Desa Markovic @Impact Box</description>
         <externalId>false</externalId>
         <label>Bursary funding distributed</label>
         <precision>18</precision>
         <required>false</required>
-        <scale>0</scale>
+        <scale>2</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
     </fields>
@@ -210,6 +234,18 @@ created by Desa Markovic @Impact Box</description>
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>Eversheds_volunteers_engaged__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Eversheds volunteers engaged</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Females_housed__c</fullName>
         <description>created by Desa Markovic @Impact Box</description>
         <externalId>false</externalId>
@@ -253,8 +289,9 @@ created by Desa Markovic @Impact Box</description>
         <description>created by Desa Markovic @Impact Box</description>
         <externalId>false</externalId>
         <formula>CASE( RecordType.DeveloperName , 
-&apos;HealthFundImpactReport&apos;, HYPERLINK(&apos;https://www.tfaforms.com/4943566/?&apos; +  &apos;tfa_32=&apos; +  Id , &apos;Click Here&apos;),
-&apos;EmployabilityFundImpactReport&apos;, HYPERLINK(&apos;https://www.tfaforms.com/4944120/?&apos; +  &apos;tfa_58=&apos; +  Id , &apos;Click Here&apos;),
+&apos;HealthFundImpactReport&apos;, HYPERLINK(&apos;https://www.tfaforms.com/4943566/?&apos; +  &apos;tfa_32=&apos; +  Id + &apos;&amp;&apos; +&apos;tfa_35=&apos; + TEXT(ReportingPeriodStart__c) + &apos;&amp;&apos; + &apos;tfa_37=&apos; + TEXT(ReportingPeriodEnd__c) , &apos;Click Here&apos;),
+&apos;EmployabilityFundImpactReport&apos;, HYPERLINK(&apos;https://www.tfaforms.com/4944120/?&apos; +  &apos;tfa_58=&apos; +  Id + &apos;&amp;&apos; +&apos;tfa_61=&apos; + TEXT(ReportingPeriodStart__c) + &apos;&amp;&apos; + &apos;tfa_63=&apos; + TEXT(ReportingPeriodEnd__c) , &apos;Click Here&apos;),
+&apos;EmployabilityFundBursaryImpactReport&apos;, HYPERLINK(&apos;https://www.tfaforms.com/4947214/?&apos; +  &apos;tfa_32=&apos; +  Id + &apos;&amp;&apos; +&apos;tfa_35=&apos; + TEXT(ReportingPeriodStart__c) + &apos;&amp;&apos; + &apos;tfa_37=&apos; + TEXT(ReportingPeriodEnd__c) , &apos;Click Here&apos;),
 &apos;FutureBuildersImpactReport&apos;, HYPERLINK(&apos;https://www.tfaforms.com/4946067/?&apos; +  &apos;tfa_29=&apos; +  Id , &apos;Click Here&apos;),
 &apos;&apos;)</formula>
         <inlineHelpText>Send this link to organisations to submit their impact reporting</inlineHelpText>
@@ -358,6 +395,16 @@ created by Desa Markovic @Impact Box</description>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>ProgrammeName__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Grant__r.Programme__c)</formula>
+        <label>Programme Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Qualifications_Achieved__c</fullName>
         <description>created by Desa Markovic @Impact Box</description>
         <externalId>false</externalId>
@@ -367,6 +414,25 @@ created by Desa Markovic @Impact Box</description>
         <scale>0</scale>
         <trackTrending>false</trackTrending>
         <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RecipientEmail__c</fullName>
+        <externalId>false</externalId>
+        <label>Recipient Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RecipientName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Grant__r.ReportingContact__r.FirstName &amp; &quot; &quot;&amp; Grant__r.ReportingContact__r.LastName</formula>
+        <label>Recipient Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -731,6 +797,11 @@ created by Desa Markovic @Impact Box</description>
         <type>Text</type>
     </nameField>
     <pluralLabel>Impact Reports</pluralLabel>
+    <recordTypes>
+        <fullName>EmployabilityFundBursaryImpactReport</fullName>
+        <active>true</active>
+        <label>Employability Fund Bursary Impact Report</label>
+    </recordTypes>
     <recordTypes>
         <fullName>EmployabilityFundImpactReport</fullName>
         <active>true</active>

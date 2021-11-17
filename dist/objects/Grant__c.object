@@ -223,12 +223,31 @@
                     <label>Health Fund</label>
                 </value>
                 <value>
-                    <fullName>Bursary Fund</fullName>
+                    <fullName>Employability Fund Bursary</fullName>
                     <default>false</default>
-                    <label>Bursary Fund</label>
+                    <label>Employability Fund Bursary</label>
+                </value>
+                <value>
+                    <fullName>Prevention Fund</fullName>
+                    <default>false</default>
+                    <label>Prevention Fund</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>ReportingContact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Reporting Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Grants</relationshipLabel>
+        <relationshipName>Grants</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Start__c</fullName>
@@ -427,5 +446,11 @@
     <pluralLabel>Grants</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Recipient_must_have_email</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISBLANK(ReportingContact__c) = FALSE, ISBLANK(ReportingContact__r.Email))</errorConditionFormula>
+        <errorMessage>You must select a contact with a valid email address as your &apos;reporting contact&apos;</errorMessage>
+    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>

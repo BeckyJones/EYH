@@ -15,6 +15,11 @@
    <types>
       <name>Flow</name>
       <members>Set_Grant_Name</members>
+      <members>Set_Recipient_Email_on_Impact_Report</members>
+   </types>
+   <types>
+      <name>Profile</name>
+      <members>*</members>
    </types>
     <version>53.0</version>
 </Package>

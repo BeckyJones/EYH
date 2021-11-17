@@ -1973,6 +1973,63 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Location__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Bristol</fullName>
+                    <default>false</default>
+                    <label>Bristol</label>
+                </value>
+                <value>
+                    <fullName>South Gloucestershire</fullName>
+                    <default>false</default>
+                    <label>South Gloucestershire</label>
+                </value>
+                <value>
+                    <fullName>Aberdeen</fullName>
+                    <default>false</default>
+                    <label>Aberdeen</label>
+                </value>
+                <value>
+                    <fullName>Aberdeenshire</fullName>
+                    <default>false</default>
+                    <label>Aberdeenshire</label>
+                </value>
+                <value>
+                    <fullName>Wiltshire</fullName>
+                    <default>false</default>
+                    <label>Wiltshire</label>
+                </value>
+                <value>
+                    <fullName>Devon Surrey</fullName>
+                    <default>false</default>
+                    <label>Devon Surrey</label>
+                </value>
+                <value>
+                    <fullName>Norfolk</fullName>
+                    <default>false</default>
+                    <label>Norfolk</label>
+                </value>
+                <value>
+                    <fullName>Suffolk</fullName>
+                    <default>false</default>
+                    <label>Suffolk</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>MailingAddress</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
@@ -2013,6 +2070,28 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Responsibilities__c</fullName>
+        <description>created by Desa Markovic @Impact box</description>
+        <externalId>false</externalId>
+        <label>Responsibilities</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Role__c</fullName>
+        <description>created by Desa Markovic @Impact Box</description>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Title</fullName>
@@ -3385,6 +3464,41 @@ npo02__Household__r.npo02__TotalOppAmount__c)</formula>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Location__c</picklist>
+            <values>
+                <fullName>Aberdeen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aberdeenshire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bristol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Devon Surrey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norfolk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Gloucestershire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suffolk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wiltshire</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Name</picklist>
             <values>
                 <fullName>Dr%2E</fullName>
@@ -3560,6 +3674,255 @@ npo02__Household__r.npo02__TotalOppAmount__c)</formula>
             </values>
             <values>
                 <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Location__c</picklist>
+            <values>
+                <fullName>Aberdeen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aberdeenshire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bristol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Devon Surrey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norfolk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Gloucestershire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suffolk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wiltshire</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Name</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mx%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npe01__PreferredPhone__c</picklist>
+            <values>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npe01__Preferred_Email__c</picklist>
+            <values>
+                <fullName>Alternate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Work</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npe01__Primary_Address_Type__c</picklist>
+            <values>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npe01__Secondary_Address_Type__c</picklist>
+            <values>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npe01__SystemAccountProcessor__c</picklist>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>One-to-One</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npo02__Naming_Exclusions__c</picklist>
+            <values>
+                <fullName>Household%5F%5Fc%2EFormal_Greeting%5F%5Fc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Household%5F%5Fc%2EInformal_Greeting%5F%5Fc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Household%5F%5Fc%2EName</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npo02__SystemHouseholdProcessor__c</picklist>
+            <values>
+                <fullName>All Individual Contacts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>All New or Edited Contacts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Contacts</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>General</fullName>
+        <active>true</active>
+        <label>General</label>
+        <picklistValues>
+            <picklist>Gender__c</picklist>
+            <values>
+                <fullName>Female</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Male</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Binary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prefer Not To Say</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Location__c</picklist>
+            <values>
+                <fullName>Aberdeen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aberdeenshire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bristol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Devon Surrey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norfolk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Gloucestershire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suffolk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wiltshire</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
